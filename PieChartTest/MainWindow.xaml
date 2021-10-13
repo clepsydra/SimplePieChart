@@ -1,0 +1,39 @@
+﻿<Window x:Class="PieChartTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:control="clr-namespace:PieChartTest.Control"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="600">
+    <StackPanel>
+        <TextBlock Text="Inner Radius:"/>
+        <Slider Minimum="0" Maximum="195" x:Name="InnerRadiusSlider" Value="150"/>
+        <TextBlock Text="{Binding Value, ElementName=InnerRadiusSlider}"/>
+
+        <TextBlock Text="Start Angle" Margin="0,20,0,0"/>
+        <Slider Minimum="-180" Maximum="0" x:Name="StartAngleSlider" Value="-130" />
+        <TextBlock Text="{Binding Value, ElementName=StartAngleSlider}"/>
+
+        <TextBlock Text="End Angle" Margin="0,20,0,0"/>
+        <Slider Minimum="0" Maximum="360" x:Name="EndAngleSlider" Value="130" />
+        <TextBlock Text="{Binding Value, ElementName=EndAngleSlider}"/>
+
+        <Grid>
+            <control:SimplePieChart InnerRadius="{Binding Value, ElementName=InnerRadiusSlider}"
+                                    StartAngle="{Binding Value, ElementName=StartAngleSlider}" EndAngle="{Binding Value, ElementName=EndAngleSlider}"
+                                x:Name="TheChart"
+                                Height="400" Width="400"/>
+
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Some Text" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       FontSize="30"/>
+                <TextBlock Text="that explains" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       FontSize="30"/>
+                <TextBlock Text="the values" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       FontSize="30"/>
+            </StackPanel>
+        </Grid>
+
+    </StackPanel>
+</Window>
