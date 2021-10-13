@@ -12,9 +12,8 @@ By changing the `InnerRadius` a ring can be drawn.
 
 And by changing the `StartAngle` and `EndAngle` to e.g. -130 and 130 a gauge like appearance can be achieved. 
 
-_____
 
-Usage
------
+
+## Usage
 
 To use it copy the content of the `Control` folder: It contains the control and the `DataPoint` class.
